@@ -1,0 +1,18 @@
+import matplotlib.pyplot as plt
+import numpy as np
+x = np.linspace(-2, 2, 201)
+y = np.linspace(-2.0, 2.0, 201)
+X, Y = np.meshgrid(x, y)
+eq = np.power(X, 2) + np.power(Y - np.cbrt(np.power(X, 2)), 2) - 1
+levels = [-1 + i*0.001 for i in range(0, 1000)]
+plt.contour(X, Y, eq, levels, colors="red")
+plt.arrow(-1, -0.5, 2.25, 2, width = 0.05)
+plt.text(-1.75, -0.75, 'Özdemir')
+plt.text(1.5, 1.75, 'Tuğce')
+plt.xlabel('X')
+plt.xlim(-3, 3)
+plt.ylabel('Y')
+plt.ylim(-3, 3)
+plt.grid()
+plt.title('Hapşırıklarımızın azaldığı ama iyi ve birlikte yaşama \n dileklerimizin hiç azalmadığı, isteklerine kavuştuğun \n ve hayellerini gerçekleştirdiğin bir yıl olsun.\n Seni seviyorum sevgilim.Mutlu yıllar')
+plt.show()
